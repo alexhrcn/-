@@ -1,48 +1,48 @@
--- config.lua
+local config = {}
 
-local config = {
-  -- Адреса транспозеров
-  inputTransposer = "a5f5eb4a-267f-4212-89ff-21dfbb365722",
-  outputTransposer = "e733dcde-2dfe-4dbc-8cb1-1e6b1140ae79",
+-- Адреса транспозеров
+config.transposerInput = "a5f5eb4a-267f-4212-89ff-21dfbb365722"
+config.transposerOutput = "e733dcde-2dfe-4dbc-8cb1-1e6b1140ae79"
 
-  -- Конфигурация сторон
-  inputSlotSide = 0,   -- верх
-  inputStorageSide = 3, -- юг
-  outputSlotSide = 0,  -- верх
-  outputStorageSide = 2, -- север
+-- Стороны подключения
+config.inputSide = "top"     -- Ввод денег
+config.inputStorage = "south" -- Хранилище для ставок
 
-  -- ID валюты
-  currencyId = "contenttweaker:money",
+config.outputSide = "top"     -- Выдача выигрыша
+config.outputStorage = "north" -- Хранилище для выигрыша
 
-  -- Поддерживаемые ставки и максимальные множители
-  bets = {
-    [10] = {maxWin = 100},
-    [25] = {maxWin = 250},
-    [50] = {maxWin = 500},
-  },
+-- Идентификатор валюты
+config.currencyName = "contenttweaker:money"
 
-  -- Шанс джекпота
-  jackpotChance = 0.005,  -- 0.5%
+-- Поддерживаемые ставки
+config.bets = {
+    [10] = true,
+    [25] = true,
+    [50] = true
+}
 
-  -- Процент возврата RTP (игроку)
-  rtp = 0.8, -- 80% возвращается игроку в среднем (то есть 20% профит)
+-- Шанс джекпота
+config.jackpotChance = 0.005  -- 0.5%
 
-  -- Интерфейс
-  title = "§eКазино ЭмФортуна§f",
+-- Возврат игроку (RTP)
+config.rtp = 0.80             -- 80% RTP (20% профит для владельца)
 
-  colors = {
+-- Цвета
+config.colors = {
     background = 0x000000,
+    border = 0xAAAAAA,
+    title = 0x00FFCC,
     text = 0xFFFFFF,
-    highlight = 0xFFFF00,
-    error = 0xFF0000,
-    success = 0x00FF00,
-    faded = 0xAAAAAA,
-  },
+    info = 0x9999FF,
+    win = 0x00FF00,
+    lose = 0xFF4444,
+    highlight = 0xFFD700
+}
 
-  screen = {
-    width = 50,
+-- Экран
+config.screen = {
+    width = 60,
     height = 20
-  }
 }
 
 return config
